@@ -10,6 +10,7 @@ function updateDisplay() {
 	$("#launched").text("Application launched so far into the air, it's literally a star now: " + launched_count);
 	$("#resumed").text("Application paused, you should unpause senpai!: " + paused_count);
 	$("#paused").text("Application resumed, damn right you resumed this sexy ass application: " + resumed_count);
+	$("#TotalActions").text("Total number of actions you've performed in this session: " + Total_Actions);
 }
 
 
