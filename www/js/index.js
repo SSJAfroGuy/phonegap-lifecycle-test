@@ -1,20 +1,20 @@
 var key = “pen”;
 var value = “blue”;
-window.localStorage.setItem( key, value );
-
+localStorage.setItem( key, value );
 document.addEventListener("deviceready", onDeviceReady, false);
 		
 	
 function updateDisplay() {
 	var key = "pen";
-	var value = window.localStorage.getItem(key)
+	var value = localStorage.getItem(key)
 	$("#pen_K").text("key");
 	$("#pen_V").text("value");
 }
 
 // device APIs are available
 //
-    function onDeviceReady() {	
+    function onDeviceReady() 
+	{		
 	document.addEventListener("resume", onResume, false);
 	document.addEventListener("pause", onPause, false);
 	updateDisplay();
@@ -23,15 +23,19 @@ function updateDisplay() {
     }
 
 
-    function onPause() {
-	updateDisplay();
-	    
+    function onPause() 
+	{
+		
+	updateDisplay();	    
 	alert("paused like a bad movie #bestjoke2018");
+	
     }
 	
 
-    function onResume() {
-	updateDisplay();
-	    
+    function onResume() 
+	{
+		
+	updateDisplay();	    
 	alert("reZOOOOOOOOOOOOOM");
+	
     }
