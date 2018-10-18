@@ -9,23 +9,32 @@ var value = "blue";
 window.localStorage.setItem(key, value);
 
 var key = "phones";
-var value = "2";
+var value = 2;
 window.localStorage.setItem(key, value);
 
 document.addEventListener("deviceready", onDeviceReady, false);
 		
 	
-function updateDisplay() {
+function updateDisplay() 
+{
 	$("#launched").text("Application launched so far into the air, it's literally a star now: " + launched_count);
-	$("#resumed").text("I'm actually telling you the value for pen" + value);
-	$("#paused").text("Application resumed, damn right you resumed this sexy ass application: " + resumed_count);
+	
+	var key = “pen”;
+	var value = window.localStorage.getItem(key);
+	$("#resumed").text("I'm actually telling you the value for pen " + value);
+	
+	var key = "phones";
+	var value = window.localStorage.getItem(key);
+	$("#paused").text("Application resumed, damn right you resumed this sexy ass application: " + value);
+	
 	$("#TotalActions").text("Total number of actions you've performed in this session: " + Total_Actions);	
 }
 
 
 // device APIs are available
 //
-    function onDeviceReady() {
+    function onDeviceReady() 
+	{
 	
 	document.addEventListener("resume", onResume, false);
 	document.addEventListener("pause", onPause, false);
@@ -38,7 +47,8 @@ function updateDisplay() {
     }
 
 
-    function onPause() {
+    function onPause() 
+	{
 	
 	paused_count++;
 	Total_Actions++;
@@ -48,7 +58,8 @@ function updateDisplay() {
     }
 	
 
-    function onResume() {
+    function onResume() 
+	{
 		
 	resumed_count++;
 	Total_Actions++;
