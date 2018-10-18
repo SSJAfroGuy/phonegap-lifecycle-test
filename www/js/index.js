@@ -61,13 +61,11 @@ function updateDisplay()
 	
 		if (confirm("Press a button!")) 
 		{
-		var pen_V = localStorage.getItem('phones');
 		txt = "NoK";
 		}
 		
 		else 
 		{
-		var pen_V = localStorage.getItem('pizza');
 		txt = "Ok";
 		}
 	
