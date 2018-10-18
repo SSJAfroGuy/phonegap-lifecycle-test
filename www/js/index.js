@@ -6,14 +6,14 @@ var Touch_count = 0;
 
 var key = "pen";
 var value = "blue";
-window.localStorage.setItem(key, value);
+//window.localStorage.setItem(key, value);
 
 document.addEventListener("deviceready", onDeviceReady, false);
 		
 	
 function updateDisplay() {
-	var key = "pen";
-	var value = window.localStorage.getitem(key);
+	//var key = "pen";
+	//var value = window.localStorage.getitem(key);
 	$("#launched").text("Application launched so far into the air, it's literally a star now: " + launched_count);
 	$("#resumed").text("I'm actually telling you the value for pen" + value);
 	$("#paused").text("Application resumed, damn right you resumed this sexy ass application: " + resumed_count);
