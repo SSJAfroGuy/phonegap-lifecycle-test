@@ -4,12 +4,18 @@ var launched_count = 0;
 var Total_Actions = 0;
 var Touch_count = 0;
 
+var key = "pen";
+var value = "blue";
+window.localStorage.setItem(key, value);
+
 document.addEventListener("deviceready", onDeviceReady, false);
 		
 	
 function updateDisplay() {
+	var key = "pen";
+	var value = window.localStorage.getitem(key);
 	$("#launched").text("Application launched so far into the air, it's literally a star now: " + launched_count);
-	$("#resumed").text("Application paused, you should unpause senpai!: " + paused_count);
+	$("#resumed").text("I'm actually telling you the value for pen" + value);
 	$("#paused").text("Application resumed, damn right you resumed this sexy ass application: " + resumed_count);
 	$("#TotalActions").text("Total number of actions you've performed in this session: " + Total_Actions);	
 }
