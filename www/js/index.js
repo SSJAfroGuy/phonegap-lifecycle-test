@@ -15,7 +15,7 @@ function updateDisplay()
 {
 	$("#launched").text("Application launched so far into the air, it's literally a star now: " + launched_count);
 
-	$("#resumed").text("I'm actually telling you the value for pen " + value);
+	$("#resumed").text("I'm actually telling you the value for pen " + var value = window.localStorage.getItem(key););
 	
 	$("#paused").text("Application resumed, damn right you resumed this sexy ass application: " + value);
 	
