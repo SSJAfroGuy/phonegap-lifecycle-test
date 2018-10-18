@@ -8,8 +8,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function updateDisplay() {
 	var key = "pen";
 	var value = window.localStorage.getItem(key)
-	$("#pen_K").text(key);
-	$("#pen_V").text(value);
+	$("#pen_K").text("key");
+	$("#pen_V").text("value");
 }
 
 // device APIs are available
