@@ -7,8 +7,8 @@ var Touch_count = 0;
 localStorage.setItem('pen', 'blue');
 localStorage.setItem('pizza', 'nom');
 localStorage.setItem('phones', '2');
-var value = localStorage.getItem(pizza);
-var pen_V = localStorage.getItem(pen);
+var value = localStorage.getItem('pizza');
+var pen_V = localStorage.getItem('pen');
 
 document.addEventListener("deviceready", onDeviceReady, false);
 		
