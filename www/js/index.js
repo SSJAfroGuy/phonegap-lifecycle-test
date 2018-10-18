@@ -1,41 +1,50 @@
-var key = “pen”;
-var value = “blue”;
-localStorage.setItem( key, value );
+var paused_count = 0;
+var resumed_count = 0;
+var launched_count = 0;
+var Total_Actions = 0;
+var Touch_count = 0;
+
 document.addEventListener("deviceready", onDeviceReady, false);
 		
 	
 function updateDisplay() {
-	var key = "pen";
-	var value = localStorage.getItem(key)
-	$("#pen_K").text("key");
-	$("#pen_V").text("value");
+	$("#launched").text("Application launched so far into the air, it's literally a star now: " + launched_count);
+	$("#resumed").text("Application paused, you should unpause senpai!: " + paused_count);
+	$("#paused").text("Application resumed, damn right you resumed this sexy ass application: " + resumed_count);
+	$("#TotalActions").text("Total number of actions you've performed in this session: " + Total_Actions);	
 }
+
 
 // device APIs are available
 //
-    function onDeviceReady() 
-	{		
+    function onDeviceReady() {
+	
 	document.addEventListener("resume", onResume, false);
 	document.addEventListener("pause", onPause, false);
+	
+	launched_count++;
+	Total_Actions++;
 	updateDisplay();
 	    
 	alert("device ready to rumble!!!");
     }
 
 
-    function onPause() 
-	{
-		
-	updateDisplay();	    
-	alert("paused like a bad movie #bestjoke2018");
+    function onPause() {
 	
+	paused_count++;
+	Total_Actions++;
+	updateDisplay();
+	    
+	alert("paused like a bad movie #bestjoke2018");
     }
 	
 
-    function onResume() 
-	{
+    function onResume() {
 		
-	updateDisplay();	    
+	resumed_count++;
+	Total_Actions++;
+	updateDisplay();
+	    
 	alert("reZOOOOOOOOOOOOOM");
-	
     }
