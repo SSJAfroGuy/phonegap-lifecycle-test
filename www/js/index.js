@@ -4,9 +4,11 @@ var launched_count = 0;
 var Total_Actions = 0;
 var Touch_count = 0;
 
-var key = "pen";
-var value = "blue";
-window.localStorage.setItem(key, value);
+localStorage.setItem('pen', 'blue');
+localStorage.setItem('pizza', 'nom');
+localStorage.setItem('phones', '2');
+var value = localStorage.getItem(pizza);
+var pen_V = localStorage.getItem(pen);
 
 document.addEventListener("deviceready", onDeviceReady, false);
 		
@@ -15,9 +17,9 @@ function updateDisplay()
 {
 	//$("#launched").text("Application launched so far into the air, it's literally a star now: " + launched_count);
 
-	$("#resumed").text("The value for the key pen " + value);
+	$("#resumed").text("The value for the key pen " + pen_V);
 	
-	//$("#paused").text("Application resumed, damn right you resumed this sexy ass application: " + value);
+	$("#paused").text("for something " + value);
 	
 	//$("#TotalActions").text("Total number of actions you've performed in this session: " + Total_Actions);	
 }
@@ -29,7 +31,7 @@ function updateDisplay()
 	{	
 		document.addEventListener("resume", onResume, false);
 		document.addEventListener("pause", onPause, false);
-		
+
 		launched_count++;
 		Total_Actions++;
 		updateDisplay();
@@ -47,26 +49,24 @@ function updateDisplay()
 		alert("paused like a bad movie #bestjoke2018");
     }
 	
-
     function onResume() 
 	{
-		
+		var value = localStorage.getItem(phones);
 		resumed_count++;
 		Total_Actions++;
 		updateDisplay();
+		
 			
 		alert("reZOOOOOOOOOOOOOM");
 	
 		if (confirm("Press a button!")) 
 		{
-		txt = value;
-		var value = "Red";
+		txt = "NoK";
 		}
 		
 		else 
 		{
-		txt = value;
-		var value = "Green";
+		txt = "Ok";
 		}
 	
     }
